@@ -167,6 +167,7 @@ else{
                             </div>
                             <div class="col-md-3 banf">
                                 <select onChange={this.onServiceChange} id="country13" class="form-control">
+                                    <option value=''>  </option>
                                     <option value='Puppy Program'>Puppy Program</option>
                                     <option value='Dog Walking'>Dog Walking</option>
                                     <option value='Pet Sitting'>Pet Sitting</option>
