@@ -8,7 +8,8 @@ class  Admin extends Component {
 constructor(props) {
     super(props);
     this.state={
-     users: ''
+     users: '',
+     services:''
     }
   }
 
@@ -25,7 +26,14 @@ onGetUsers = ()=> {
 })
 
 }
+onGetServices = ()=> {  
+  fetch('https://obscure-lowlands-61077.herokuapp.com/getservices')
+  .then(services => users.json())
+  .then(services =>{ 
+    this.setState({services: services});    
+})
 
+}
 
 
 
