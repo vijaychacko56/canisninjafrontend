@@ -28,7 +28,7 @@ onGetUsers = ()=> {
 }
 onGetServices = ()=> {  
   fetch('https://obscure-lowlands-61077.herokuapp.com/getservices')
-  .then(services => users.json())
+  .then(services => services.json())
   .then(services =>{ 
     this.setState({services: services});    
 })
