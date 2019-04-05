@@ -44,6 +44,8 @@ class Login extends Component {
 
     <div className="limiter">
     <div className="container-login100">
+    <div className="login100-more" style={{backgroundImage: "url(" +"/images/banner.jpg" + ")",marginLeft: '5%' , width: '550px' }} ></div>
+               
       <div className="wrap-login100">
         <div className="login100-form validate-form">
           <span className="login100-form-title p-b-34">
@@ -62,36 +64,16 @@ class Login extends Component {
           <div className="container-login100-form-btn">
             <button onClick ={this.onSubmitLogin} className="login100-form-btn">LOGIN</button>
           </div>
-
-          <div className="w-full text-center p-t-27 p-b-239">
-            <span className="txt1">
-             
-            </span>
-
-            <a href="#" className="txt2">
-             
-            </a>
-          </div>
-            <div className="container-login100-form-btn">
+          <div><p style={{"marginTop": "2%"}}> Don't Have a Username? Please be our member and Signup Now!</p></div>
+          <div style={{"marginTop": "2%"}} className="container-login100-form-btn">
             <button onClick={()=> onRouteChange('signup')} className="login100-form-btn">SignUp</button>
           </div> 
           
         </div>
-
-
-       
-
-       <div className="login100-more" style={{backgroundImage: "url(" +"/images/banner.jpg" + ")"}}></div>
-       
       </div>
     </div>
   </div>
-  
-
-
-    );
+  );
  }
-
-  
 }
   export default Login;

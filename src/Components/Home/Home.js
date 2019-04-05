@@ -28,7 +28,7 @@ const Home = () =>{
             <div class="inner-sec-w3layouts py-md-5 py-3">
                 <div class="row choose-main">
                     <div class="col-lg-3">
-                        <h3><small>Canis Ninja</small>AboutUS</h3>
+                        <h3><small>Canis Ninja</small>About US</h3>
                     </div>
                     <div class="col-lg-4 ">
                         <p class = "about-us-font">Canis Ninja is a service launched by four dog lovers in 1992. The motive of the founders was to provide busy people with the means that ensured their beloved pet is well-taken care off irrespective of the hustle and bustle of daily life. </p>
@@ -99,10 +99,7 @@ const Home = () =>{
                     </div>
 
                 </div>
-                <div class="log-in mt-md-4 mt-3 center-button" >
-                            <a class="btn text-uppercase" data-blast="bgColor" href="#">
-                             Services</a>
-                </div>
+                
             </div>
         </div>
     </section>
