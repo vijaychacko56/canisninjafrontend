@@ -96,13 +96,13 @@ onSubmitSignup = () => {
         
                             <div className="wrap-input100 validate-input" data-validate = "Password is required">
                                 
-                                <input onChange={this.onPasswordChange} className="input100" type="text" name="pass" placeholder="Password"/>
+                                <input onChange={this.onPasswordChange} className="input100" type="password" name="pass" placeholder="Password"/>
                                 <span className="focus-input100"></span>
                             </div>
         
                             <div className="wrap-input100 validate-input" data-validate = "Repeat Password is required">
                                 
-                                <input onChange={this.onRepeatPasswordChange} className="input100" type="text" name="repeat-pass" placeholder="Confirm Password"/>
+                                <input onChange={this.onRepeatPasswordChange} className="input100" type="password" name="repeat-pass" placeholder="Confirm Password"/>
                                 <span className="focus-input100"></span>
                             </div>
         

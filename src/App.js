@@ -84,21 +84,10 @@ this.setState({route:route});
  
 {this.state.route === 'home'?<Home />:(this.state.route === 'login' ?<Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:(this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:(this.state.route=='admin'?<Admin />:<Error />))))}
 
-
-
-
-
   <Footer />
 
   <script src="js/main.js"></script>
 </body>        
-
-
-
-
-
-
-
       </div>
     );
   }

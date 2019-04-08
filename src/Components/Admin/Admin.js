@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Table } from 'reactstrap';
 
 
 class  Admin extends Component {
@@ -33,7 +33,8 @@ render(){
   var tableStyle = {
     "margin-left": "auto",
     "margin-right": "auto",
-    "margin-top": "1%"
+    "margin-top": "1%",
+    "width": '800px'
  };
 
  var headerStyle = {
@@ -47,7 +48,10 @@ render(){
 
 return(
       <div style={{'marginTop': '120px', 'textAlign': 'center'}}>
-        <h3>Welcome, Admin!</h3>
+        <h3 style={{'marginTop': '150px'}}>Welcome, Admin!</h3>
+        <div style={{'marginTop': '50px'}}>
+          <p>Please select an operation you want to perform.</p>
+        </div>
         
 			   <div style={{'marginTop': '50px'}} >
             <button onClick={this.onGetUsers} style={{"width": '150px', "margin": "auto"}} className="login100-form-btn">
@@ -58,7 +62,7 @@ return(
         <div>
           {this.state.users != null &&
             <div>
-              <table style={tableStyle} cellPadding="30">
+              <Table style={tableStyle} bordered responsive>
               <caption style={{'textAlign': 'center'}}>List of All Users</caption>
               <thead>
                 <tr>
@@ -81,12 +85,12 @@ return(
                 </tbody> 
                 ))}
                 
-              </table>
+              </Table>
             </div>
         }
         </div>
 
-        <div style={{'marginBottom': '60px', 'marginTop': '70px'}} >
+        <div style={{'marginBottom': '60px', 'marginTop': '70px'}} responsive="sm" >
           <button onClick={this.onGetServices} style={{"width": '150px', "margin": "auto"}} className="login100-form-btn">
             Get Services
           </button>
@@ -94,7 +98,7 @@ return(
         <div>
         {this.state.services != null &&
             <div>
-              <table style={tableStyle} cellPadding="30">
+              <Table style={tableStyle} bordered responsive>
               <caption style={{'textAlign': 'center'}}>List of All Services Availed</caption>
               <thead>
                 <tr>
@@ -113,7 +117,7 @@ return(
                 </tbody> 
                 ))}
                 
-              </table>
+              </Table>
             </div>
         }
         </div>
