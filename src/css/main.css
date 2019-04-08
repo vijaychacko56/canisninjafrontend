@@ -570,5 +570,17 @@ i {
   }
 }
 
-
+@media (max-width: 991px){
+.navbar-toggler {
+    position: absolute;
+    right: 0px !important;
+    top: 20px;
+    background: rgba(0, 0, 0, 0) !important; 
+    border: 0 !important; 
+    padding: 0.3em 0.5em;
+}
+.top-bar a.navbar-brand {
+		font-size: 25px !important;
+}
+}
 
