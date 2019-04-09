@@ -24,6 +24,7 @@ class App extends Component {
    this.toggleNavbar = this.toggleNavbar.bind(this);
    this.state = {
     route:'login',
+    collapsed: true,
     user:{
       email:''
     }
@@ -83,7 +84,7 @@ this.setState({route:route});
             
                     <a className="navbar-brand logo" href="#" onClick={()=> this.onRouteChange('home')}><img src ="/images/logo.jpg" alt="Logo" /></a> 
                     <a className="navbar-brand mx-auto" href="#" onClick={()=> this.onRouteChange('home')}>Canis <span data-blast="color">Ninja</span></a>
-                    <div  className={`${classOne}`}  id="navbarCollapse1" style={{'background-color':'#167ac0'}}>
+                    <div  className={`${classOne}`}  id="navbarCollapse1">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
