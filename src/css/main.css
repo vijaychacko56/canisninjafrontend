@@ -582,5 +582,9 @@ i {
 .top-bar a.navbar-brand {
 		font-size: 25px !important;
 }
+
+ul.navbar-nav {
+    background: #167ac0 !important;
+}
 }
 
