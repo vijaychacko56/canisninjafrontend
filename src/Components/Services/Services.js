@@ -10,11 +10,15 @@ constructor(props) {
       servname:'',
       phone:'',
       ondate:'',
+      address:''
     }
   }
 
  onNameChange = (event) => {
     this.setState({cusname: event.target.value})
+ }
+ onAddressChange = (event) => {
+    this.setState({address: event.target.value})
  }
  onServiceChange = (event) => {
     this.setState({servname: event.target.value})
@@ -33,6 +37,7 @@ onSubmitService = () =>{
       body: JSON.stringify({
         email:this.props.userEmail,
         cusname:this.state.cusname,
+        address:this.state.address,
         phone:this.state.phone,
         ondate:this.state.ondate,
         servname: this.state.servname,
@@ -158,6 +163,9 @@ else{
                         <div class="booking-form row">
                             <div class="col-md-3 banf">
                                 <input onChange={this.onNameChange} class="form-control" type="text" name="Name" placeholder="Name" required=""/>
+                            </div>
+                            <div class="col-md-3 banf">
+                                <input onChange={this.onAddressChange} class="form-control" type="text" name="Address" placeholder="Address" required=""/>
                             </div>
                             <div class="col-md-3 banf">
                                 <input onChange={this.onDateChange} class="form-control"  type="text" name="Date" placeholder="Date" required=""/>
