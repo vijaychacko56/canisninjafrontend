@@ -11,7 +11,8 @@ class  Signup extends Component {
       password:'',
       repeatPassword:'',
       username:'',
-      fullname:''
+      fullname:'',
+      signupError:false
     }
   }
 
@@ -33,11 +34,16 @@ class  Signup extends Component {
 
 
 onSubmitSignup = () => {
+        const {email, password, username, fullname} = this.state;
         if(this.state.password != this.state.repeatPassword){
+            this.setState({signupError: false})
             alert("Passwords dont match");
+
         }
         else{
 
+    if(email && password && username && fullname){
+         this.setState({signupError: false})
      fetch('https://obscure-lowlands-61077.herokuapp.com/register',{
       method: 'post',
       headers:{'Content-type': 'application/json'},
@@ -56,10 +62,15 @@ onSubmitSignup = () => {
       }
       else{
         alert("Signup Failed. Try Again Please");
+         this.setState({signupError: true})
       }
     })
 
         }
+        else{
+                this.setState({signupError: true})
+        }
+    }
 
     
 }
@@ -76,7 +87,11 @@ onSubmitSignup = () => {
                             <span className="login100-form-title p-b-59">
                                 SIGN UP
                             </span>
-        
+
+                                <div style={{ 'display':this.state.signupError?'block':'none', 'background-color':'red', 'text-align':'center','padding':'1%', 'margin':'5% auto'}}>
+                                     <p style={{'color':'white'}}> Woff!! Please enter all fields to Register!!</p>
+                                </div>
+
                             <div className="wrap-input100 validate-input" data-validate="Name is required">
                                 <input onChange={this.onNameChange} className="input100" type="text" name="name" placeholder="Name..."/>
                                 <span className="focus-input100"></span>

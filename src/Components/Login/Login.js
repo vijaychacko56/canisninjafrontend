@@ -6,7 +6,8 @@ class Login extends Component {
     super(props);
     this.state={
       loginEmail:'',
-      loginPassword:''
+      loginPassword:'',
+      loginError: false
     }
   }
 
@@ -28,11 +29,12 @@ class Login extends Component {
     .then(response => response.json())
     .then(user =>{
       if(user.id){
+        this.setState({loginError:false})
         this.props.loadUser(user);
         this.props.onRouteChange('home');
       }
       else{
-        alert("Wrong credentials");
+        this.setState({loginError:true})
       }
     })
 }
@@ -52,7 +54,12 @@ class Login extends Component {
             Account Login
           </span>
            
-          <div className="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+          <div style={{ 'display':this.state.loginError?'block':'none', 'background-color':'red', 'text-align':'center','padding':'1%', 'margin':'5% auto'}}>
+                 <p style={{'color':'white'}}> Woff!! Invalid Credentials. Please Try Again </p>
+            </div>
+
+
+          <div  className="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
             <input onChange={this.onEmailChange} id="email" className="input100" type="text" name="email" placeholder="Email"/>
             <span className="focus-input100"></span>
           </div>
