@@ -7,16 +7,20 @@ import './css/signup.css';
 import './css/font-awesome.css';
 import './css/lightbox.css';
 import './css/blast.min.css';
-
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import Services from './Components/Services/Services';
 import Home from './Components/Home/Home';
 import Error from './Components/Error/Error';
 import Admin from './Components/Admin/Admin';
+import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+<<<<<<< HEAD
 import Testimonial from './Components/Testimonial/Testimonial';
+=======
 import User from './Components/User/User';
+
+>>>>>>> d4a25233d882966327aa737460e7bb3ea7093278
 
 class App extends Component {
   
@@ -92,8 +96,8 @@ this.setState({route:route});
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
-
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
+                    
+                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
 
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
@@ -107,10 +111,15 @@ this.setState({route:route});
 (this.state.route === 'login' ?<Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : 
   (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:
     (this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:
-  (this.state.route=='testimonial'?<Testimonial />:
+<<<<<<< HEAD
+      (this.state.route=='admin'?<Admin />: 
+  (this.state.route=='testimonial'?<Testimonial />:<Error />
+    )))))}
+=======
       (this.state.route==='admin'?<Admin />:
         (this.state.route=='user'?<User userEmail= {this.state.user.email} fullname = {this.state.user.fullname} onRouteChange ={this.onRouteChange}/>:
-        <Error />))))))}
+        <Error />)))))}
+>>>>>>> d4a25233d882966327aa737460e7bb3ea7093278
 
   <Footer />
 
