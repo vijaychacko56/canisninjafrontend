@@ -112,6 +112,9 @@ this.setState({route:route});
         (this.state.route=='user'?<User userEmail= {this.state.user.email} fullname = {this.state.user.fullname} onRouteChange ={this.onRouteChange}/>:
         <Error />))))))}
 
+  <br />
+  <br />
+  <br />
   <Footer />
 
   <script src="js/main.js"></script>
