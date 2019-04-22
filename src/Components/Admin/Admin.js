@@ -13,6 +13,16 @@ constructor(props) {
     }
   }
 
+
+componentDidMount() {
+  if(!this.props.userEmail){
+    alert("Login first")
+    this.props.onRouteChange('login');  
+  }
+}
+
+
+
 onGetUsers = ()=> {
 	fetch('https://obscure-lowlands-61077.herokuapp.com/users')
 	.then(users => users.json())
@@ -128,14 +138,14 @@ return(
                 
               </table>
             </div>
-            </div>
-            </div>
-            </div>
-        }
+          </div>
         </div>
+      </div>
+    }
+  </div>
 
-    </div>       
-    );
+  </div>       
+  );
 }
 
 
