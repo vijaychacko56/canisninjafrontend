@@ -92,12 +92,13 @@ this.setState({route:route});
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
 
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
 
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
+                    
                         </ul>
                     </div>
                 </div>

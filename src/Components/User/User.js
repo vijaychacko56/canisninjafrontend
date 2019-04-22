@@ -17,7 +17,7 @@ constructor(props) {
 
 
 componentDidMount() {
-  if(!this.props.userEmail){
+  if(this.props.userEmail){
       fetch('https://obscure-lowlands-61077.herokuapp.com/getuserservice',{
       method: 'post',
       headers:{'Content-type': 'application/json'},

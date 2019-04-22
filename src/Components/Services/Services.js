@@ -11,6 +11,9 @@ constructor(props) {
       phone:'',
       ondate:'',
       address:'',
+      city:'',
+      state:'',
+      zip:'',
       error: false,
       success:false
     }
@@ -31,8 +34,23 @@ constructor(props) {
  onDateChange = (event) => {
     this.setState({ondate: event.target.value})
  }
+
+ onCityChange = (event) => {
+    this.setState({city: event.target.value})
+
+ }
+ onStateChange = (event) => {
+    this.setState({state: event.target.value})
+
+ }
+ onZipChange = (event) => {
+    this.setState({zip: event.target.value})
+
+ }
+ 
+
 onSubmitService = () =>{
-    const {cusname, address, phone, ondate, servname} = this.state;
+    const {cusname, address, phone,city,state,zip,ondate, servname} = this.state;
     if(this.props.userEmail){
      if(cusname && address && phone && ondate && servname)   {
         this.setState({error: false});
@@ -42,7 +60,7 @@ onSubmitService = () =>{
       body: JSON.stringify({
         email:this.props.userEmail,
         cusname:this.state.cusname,
-        address:this.state.address,
+        address:this.state.address + ' ' + this.state.city + ' ' + this.state.state+' ' + this.state.zip,
         phone:this.state.phone,
         ondate:this.state.ondate,
         servname: this.state.servname

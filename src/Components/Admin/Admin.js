@@ -47,8 +47,8 @@ render(){
  };
 
 return(
-      <div style={{'marginTop': '120px', 'textAlign': 'center'}}>
-        <h3 style={{'marginTop': '150px'}}>Welcome, Admin!</h3>
+      <div style={{'marginTop': '100px', 'textAlign': 'center'}}>
+        <h3 style={{'marginTop': '100px'}}>Welcome, Admin!</h3>
         <div style={{'marginTop': '50px'}}>
           <p>Please select an operation you want to perform.</p>
         </div>
