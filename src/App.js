@@ -30,7 +30,7 @@ class App extends Component {
       email:'',
       fullname:''
     },
-    urls:['http://localhost:3000/#', 'http://localhost:3000/', 'localhost:3000']
+    urls:['http://localhost:3000/#', 'http://localhost:3000/', 'localhost:3000','https://canisninja.herokuapp.com/','https://canisninja.herokuapp.com/#']
    }
  }
 
