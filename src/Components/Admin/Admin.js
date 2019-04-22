@@ -58,36 +58,43 @@ return(
               Get Users
             </button>
         </div>
-                       
+         <br />
+         <br />              
         <div>
-          {this.state.users != null &&
-            <div>
-              <Table style={tableStyle} bordered responsive>
-              <caption style={{'textAlign': 'center'}}>List of All Users</caption>
-              <thead>
-                <tr>
-                  <th style={headerStyle}>SNo.</th>
-                  <th style={headerStyle}>Name</th>
-                  <th style={headerStyle}>Email</th>
-                  <th style={headerStyle}>Username</th>
-                  <th style={headerStyle}>Member Since</th>
-                </tr>
-              </thead>
-                {Object.keys(this.state.users).map((key) => (
+          {this.state.users != null &&      
+      <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100">
+          <table>
+            <thead>
+              <tr class="table100-head">
+                <th class="column1">S No</th>
+                <th class="column2">Name</th>
+                <th class="column2">Email</th>
+                <th class="column2">User Name</th>
+                <th class="column2">Member Since</th>
+              </tr>
+            </thead>
+            
+              {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
-                  <td style={rowStyle}>{this.state.users[key].id}</td>
-                  <td style={rowStyle}>{this.state.users[key].fullname}</td>
-                  <td style={rowStyle}>{this.state.users[key].email}</td>
-                  <td style={rowStyle}>{this.state.users[key].username}</td>
-                  <td style={rowStyle}>{this.state.users[key].joined}</td>
+                  <td class="column1">{this.state.users[key].id}</td>
+                  <td class="column2">{this.state.users[key].fullname}</td>
+                  <td class="column2">{this.state.users[key].email}</td>
+                  <td class="column2">{this.state.users[key].username}</td>
+                  <td class="column2">{this.state.users[key].joined}</td>
                 </tr>
                 </tbody> 
                 ))}
-                
-              </Table>
-            </div>
-        }
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div> 
+}
         </div>
 
         <div style={{'marginBottom': '60px', 'marginTop': '70px'}} responsive="sm" >
@@ -96,34 +103,39 @@ return(
           </button>
         </div>   
         <div>
-        {this.state.services != null &&
-            <div>
-              <Table style={tableStyle} bordered responsive>
-              <caption style={{'textAlign': 'center'}}>List of All Services Availed</caption>
-              <thead>
-                <tr>
-                  <th style={headerStyle}>SNo.</th>
-                  <th style={headerStyle}>Service Name</th>
-                  <th style={headerStyle}>Customer Name</th>
-                </tr>
-              </thead>
+{this.state.services != null &&      
+      <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100">
+          <table>
+            <thead>
+              <tr class="table100-head">
+                <th class="column1">S No</th>
+                <th class="column2">Service Name</th>
+                <th class="column2">Customer Name</th>
+              </tr>
+            </thead>
                 {Object.keys(this.state.services).map((key) => (
               <tbody>
                 <tr>
-                  <td style={rowStyle}>{this.state.services[key].id}</td>
-                  <td style={rowStyle}>{this.state.services[key].servname}</td>
-                  <td style={rowStyle}>{this.state.services[key].cusname}</td>
+                  <td class="column1">{this.state.services[key].id}</td>
+                  <td class="column2">{this.state.services[key].servname}</td>
+                  <td class="column2">{this.state.services[key].cusname}</td>
                 </tr>
                 </tbody> 
                 ))}
                 
-              </Table>
+              </table>
+            </div>
+            </div>
+            </div>
             </div>
         }
         </div>
 
     </div>       
-		);
+    );
 }
 
 

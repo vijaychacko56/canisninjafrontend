@@ -16,6 +16,7 @@ import Admin from './Components/Admin/Admin';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Testimonial from './Components/Testimonial/Testimonial';
+import User from './Components/User/User';
 
 class App extends Component {
   
@@ -27,7 +28,8 @@ class App extends Component {
     route:'login',
     collapsed: true,
     user:{
-      email:''
+      email:'',
+      fullname:''
     }
    }
  }
@@ -41,7 +43,8 @@ class App extends Component {
 
 loadUser = (data) =>{
   this.setState({user:{
-    email:data.email
+    email:data.email,
+    fullname: data.fullname
   }})
 }
 
@@ -91,6 +94,8 @@ this.setState({route:route});
                             <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
                     
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
+
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
                         </ul>
@@ -102,9 +107,15 @@ this.setState({route:route});
 (this.state.route === 'login' ?<Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : 
   (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:
     (this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:
+<<<<<<< HEAD
       (this.state.route=='admin'?<Admin />: 
   (this.state.route=='testimonial'?<Testimonial />:<Error />
     )))))}
+=======
+      (this.state.route==='admin'?<Admin />:
+        (this.state.route=='user'?<User userEmail= {this.state.user.email} fullname = {this.state.user.fullname} onRouteChange ={this.onRouteChange}/>:
+        <Error />)))))}
+>>>>>>> d4a25233d882966327aa737460e7bb3ea7093278
 
   <Footer />
 
