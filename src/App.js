@@ -30,7 +30,7 @@ class App extends Component {
       email:'',
       fullname:''
     },
-    urls:['http://localhost:3000/#', 'http://localhost:3000/', 'localhost:3000','https://canisninja.herokuapp.com/','https://canisninja.herokuapp.com/#']
+    urls:['http://localhost:3000/https://canisninja.herokuapp.com/#', 'http://localhost:3000/', 'localhost:3000','https://canisninja.herokuapp.com/','https://canisninja.herokuapp.com/https://canisninja.herokuapp.com/#']
    }
  }
 
@@ -89,26 +89,26 @@ this.setState({route:route});
 <body>
 <nav className="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
                 <div className="container">
-                    <button onClick={this.toggleNavbar} className={`${classTwo}`}   type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onClick={this.toggleNavbar} className={`${classTwo}`}   type="button" data-toggle="collapse" data-target="https://canisninja.herokuapp.com/#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"><i className="fa fa-bars" aria-hidden="true"></i></span>
-                    </button>          
+                    </button>
+            
                     <a className="navbar-brand logo" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}><img src ="/images/logo.jpg" alt="Logo" /></a> 
                     <a className="navbar-brand mx-auto" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}>Canis <span data-blast="color">Ninja</span></a>
                     <div  className={`${classOne}`}  id="navbarCollapse1">
                         <ul className="navbar-nav ml-auto">
-                        
-                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
+                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="https://canisninja.herokuapp.com/#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
-                    
-                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
+
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
 
                             <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
                         </ul>
                     </div>
                 </div>
             </nav>
- 
     
 <Error />
 
@@ -135,25 +135,26 @@ this.setState({route:route});
 <body>
 <nav className="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
                 <div className="container">
-                    <button onClick={this.toggleNavbar} className={`${classTwo}`}   type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onClick={this.toggleNavbar} className={`${classTwo}`}   type="button" data-toggle="collapse" data-target="https://canisninja.herokuapp.com/#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"><i className="fa fa-bars" aria-hidden="true"></i></span>
-                    </button>          
+                    </button>
+            
                     <a className="navbar-brand logo" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}><img src ="/images/logo.jpg" alt="Logo" /></a> 
                     <a className="navbar-brand mx-auto" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}>Canis <span data-blast="color">Ninja</span></a>
                     <div  className={`${classOne}`}  id="navbarCollapse1">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
+                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="https://canisninja.herokuapp.com/#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
-                    
-                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
+
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
 
                             <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
                         </ul>
                     </div>
                 </div>
-            </nav>
- 
+            </nav> 
     
 
 {this.state.route === 'home'?<Home />:
