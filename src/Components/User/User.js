@@ -69,33 +69,33 @@ return(
         </div>
 
       {this.state.users != null &&      
-      <div class="limiter">
-    <div class="container-table100">
-      <div class="wrap-table100">
-        <div class="table100">
+      <div class="limit">
+    <div class="container-t">
+      <div class="wrap-t">
+        <div class = "localUser">
           <table>
             <thead>
-              <tr class="table100-head">
-                <th class="column1">Name</th>
-                <th class="column2">Service Name</th>
-                <th class="column2">Date</th>
-                <th class="column2">Address</th>
+              <tr class="table-head">
+                <th class="columnA">Name</th>
+                <th class="columnB">Service Name</th>
+                <th class="columnB">Date</th>
+                <th class="columnB">Address</th>
               </tr>
             </thead>
             
               {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
-                  <td class="column1">{this.state.users[key].cusname}</td>
-                  <td class="column2">{this.state.users[key].servname}</td>
-                  <td class="column2">{this.state.users[key].ondate}</td>
-                  <td class="column2">{this.state.users[key].address}</td>
+                  <td class="columnA">{this.state.users[key].cusname}</td>
+                  <td class="columnB">{this.state.users[key].servname}</td>
+                  <td class="columnB">{this.state.users[key].ondate}</td>
+                  <td class="columnB">{this.state.users[key].address}</td>
                 </tr>
                 </tbody> 
                 ))}
             
           </table>
-        </div>
+         </div> 
       </div>
     </div>
   </div> 

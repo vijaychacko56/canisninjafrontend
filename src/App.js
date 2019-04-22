@@ -7,6 +7,7 @@ import './css/signup.css';
 import './css/font-awesome.css';
 import './css/lightbox.css';
 import './css/blast.min.css';
+import './css/admin.css';
 
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
