@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 
-
+/*
+  Admin class that shows admin user details about
+  all the users and the services availed by the users.
+*/
 class  Admin extends Component {
 
-// Call the super constructor
+
+/* 
+  Contructor of class Admin
+  initializes class variables users and services to null
+*/
 constructor(props) {
     super(props);
     this.state={
@@ -13,24 +20,43 @@ constructor(props) {
     }
   }
 
-// A GET API call to get users from back-end server
+
+/* 
+  Function that calls the endpoint to fetch
+  all the users and their details from the database
+*/
+
+componentDidMount() {
+  if(!this.props.userEmail){
+    alert("Login first")
+    this.props.onRouteChange('login');  
+  }
+}
+
+
+
 onGetUsers = ()=> {
 	fetch('https://obscure-lowlands-61077.herokuapp.com/users')
 	.then(users => users.json())
 	.then(users =>{	
-    this.setState({users: users});		
+    this.setState({users: users});		/*Initializes the class variable users with the fetched json data*/ 
   })
 }
 
-// Get API call to get services from back end server
+
+/* 
+  Function that calls the endpoint to fetch
+  all the services availed till date from the database
+*/
 onGetServices = ()=> {  
   fetch('https://obscure-lowlands-61077.herokuapp.com/getservices')
   .then(services => services.json())
   .then(services =>{ 
-    this.setState({services: services});  
+    this.setState({services: services});  /*Initializes the class variable services with the fetched json data*/
     console.log(services);  
   })
 }
+
 
 /* render this section on the main page
 
@@ -62,6 +88,7 @@ return(
     <div class="container-t">
       <div class="wrap-t">
         <div class = "user">
+
           <table>
             <thead>
               <tr class="table-head">
@@ -73,6 +100,11 @@ return(
               </tr>
             </thead>
              {/* Render all the json object from REST call into the table*/}
+
+              {/**
+                class variable users key value pair
+                is iterated using the map
+              */}
               {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
@@ -103,11 +135,17 @@ return(
         <br />
         <br /> 
         <div>
+          {/**
+            condition to check class variable services
+            is not null and if it is not null then HTML code below 
+            the condition to show the services table is shown
+          */}
 {this.state.services != null &&      
       <div class="limit">
     <div class="container-t">
       <div class="wrap-t">
         <div class = "service">
+
           <table>
             <thead>
               <tr class="table-head">
@@ -116,7 +154,10 @@ return(
                 <th class="columnB">Customer Name</th>
               </tr>
             </thead>
-             {/*Render all the json results into the table*/}
+
+            {/**
+              mapper to iterate the services variable
+            */}
                 {Object.keys(this.state.services).map((key) => (
               <tbody>
                 <tr>

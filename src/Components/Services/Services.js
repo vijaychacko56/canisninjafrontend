@@ -11,6 +11,9 @@ constructor(props) {
       phone:'',
       ondate:'',
       address:'',
+      city:'',
+      state:'',
+      zip:'',
       error: false,
       success:false
     }
@@ -26,13 +29,46 @@ constructor(props) {
     this.setState({servname: event.target.value})
  }
  onPhoneChange = (event) => {
-    this.setState({phone: event.target.value})
+    this.setState({phone: event.target.value})   
+ }
+
+ onPhoneEnter = (event) => {
+    var phonePattern = /^\d{10}$/;
+    var checkMatch = (event.target.value).match(phonePattern);
+    if(!checkMatch) {
+        alert("Woof! - Please check the phone number, only 10 numeric digits are allowed!");
+        this.setState({phone: ''});
+    }
+ }
+ onZipChange = (event) => {
+     this.setState({zip: event.target.value});
+     var zipPattern = /^\d{5}$/;
+     var zipMatch = (event.target.value).match(zipPattern);
+     if(!zipMatch) {
+        alert("Woof! - Please check the zip, only 5 numeric digits are allowed!");
+        this.setState({zip: ''});
+     }
  }
  onDateChange = (event) => {
     this.setState({ondate: event.target.value})
  }
+
+ onCityChange = (event) => {
+    this.setState({city: event.target.value})
+
+ }
+ onStateChange = (event) => {
+    this.setState({state: event.target.value})
+
+ }
+ onZipChange = (event) => {
+    this.setState({zip: event.target.value})
+
+ }
+ 
+
 onSubmitService = () =>{
-    const {cusname, address, phone, ondate, servname} = this.state;
+    const {cusname, address, phone,city,state,zip,ondate, servname} = this.state;
     if(this.props.userEmail){
      if(cusname && address && phone && ondate && servname)   {
         this.setState({error: false});
@@ -42,7 +78,7 @@ onSubmitService = () =>{
       body: JSON.stringify({
         email:this.props.userEmail,
         cusname:this.state.cusname,
-        address:this.state.address,
+        address:this.state.address + ' ' + this.state.city + ' ' + this.state.state+' ' + this.state.zip,
         phone:this.state.phone,
         ondate:this.state.ondate,
         servname: this.state.servname
@@ -75,6 +111,10 @@ else{
         var buttonStyle = {
             'width': '20%'
            };
+
+        var inputStyle = {
+            "height": "40px"
+        };
      return(
 <div>
 <section className="about-sec parallax-section py-lg-5 py-4" id="services">
@@ -176,24 +216,24 @@ else{
 
    
     <section class="about-sec parallax-section py-lg-5 py-4" id="book">
-    <h1 style={{color: "orange", textAlign:"center"}}>Book A Service</h1>
         <div class="container">
             <div class="inner-sec-w3layouts py-md-5 py-3">
+           
                 <div class="choose-main" style= {{'text-align': 'center'}}>
                     <div style= {{'display': 'inline-block'}}>
                     <div id="search_form" class="search_top text-center">
-                        <div class="booking-form row" id='booking'>
+                        <div class="booking-form row" id='booking' style = {{'margin':'2% auto'}}>
                             <div class="col-md-3 banf">
-                                <input onChange={this.onNameChange} class="form-control" type="text" name="Name" placeholder="Name" required=""/>
+                                <input onChange={this.onNameChange} className="form-control" type="text" name="Name" placeholder="Name" required=""/>
                             </div>
-                            <div className="form-group  col-md-3 banf">
+                            <div className="col-md-3 banf">
                                 <input onChange={this.onDateChange} className="form-control"  type="date" name="Date" placeholder="Date" required=""/>
                             </div>
-                            <div className="form-group  col-md-3 banf">
-                                <input onChange={this.onPhoneChange} className="form-control" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Phone" required=""/>
+                            <div className="col-md-3 banf">
+                                <input onChange={this.onPhoneChange} onBlur={this.onPhoneEnter} className="form-control" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Phone" required=""/>
                             </div>
                             <div class="col-md-3 banf">
-                                <select onChange={this.onServiceChange} id="country13" class="form-control">
+                                <select onChange={this.onServiceChange} id="country13" className="form-control">
                                     <option value=''>Select a Service</option>
                                     <option value='Dog Walking'>Dog Walking: Price $15.00</option>
                                     <option value='Puppy Program'>Playtime Service: Price $25.00</option>

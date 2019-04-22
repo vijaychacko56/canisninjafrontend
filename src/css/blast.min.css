@@ -105,3 +105,18 @@ body {
     border-left: none;
     background: #5d5b5b;
 }
+
+.error-container > span:nth-of-type(1) > span {
+    transform-origin: 50% 100% 0px;
+    transform: rotateX(0);
+    animation: easyoutelastic 8s infinite;
+}
+.error-container > span > span {
+    display: inline-block;
+    position: relative;
+}
+.error-container > span:nth-of-type(1) {
+    perspective: 1000px;
+    perspective-origin: 500% 50%;
+    color: #F0E395;
+}
