@@ -15,6 +15,7 @@ import Error from './Components/Error/Error';
 import Admin from './Components/Admin/Admin';
 import Footer from './Components/Footer/Footer';
 import User from './Components/User/User';
+import Testimonial from './Components/Testimonial/Testimonial';
 
 
 class App extends Component {
@@ -163,7 +164,8 @@ this.setState({route:route});
     (this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:
       (this.state.route==='admin'?<Admin userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange} />:
         (this.state.route=='user'?<User userEmail= {this.state.user.email} fullname = {this.state.user.fullname} onRouteChange ={this.onRouteChange}/>:
-        <Error />)))))}
+         (this.state.route === 'testimonial' ? <Testimonial onRouteChange ={this.onRouteChange}/>: 
+        <Error />))))))}
 
   <br />
   <br />
