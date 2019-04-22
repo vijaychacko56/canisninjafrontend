@@ -7,13 +7,13 @@ import './css/signup.css';
 import './css/font-awesome.css';
 import './css/lightbox.css';
 import './css/blast.min.css';
+
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import Services from './Components/Services/Services';
 import Home from './Components/Home/Home';
 import Error from './Components/Error/Error';
 import Admin from './Components/Admin/Admin';
-import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component {
@@ -89,7 +89,7 @@ this.setState({route:route});
                             <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
                             <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
                     
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
                         </ul>
                     </div>

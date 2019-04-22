@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
+import '../../css/banner.css';
+import { Slide } from 'react-slideshow-image';
+
+const slideImages = [
+    'images/1new.jpg',
+    'images/2.jpg'
+];
+
+const properties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    //indicators: true,
+    arrows: true
+  }
 
 const Home = () =>{
 	return(
-	<div>	
-		      <div class="swiper-container main-slider" id="myCarousel" data-blast="bgColor">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide slider-bg-position" style={{'background':'url('+'/images/1.jpg'+')'}} data-hash="slide1">
-                           
-                        </div>
-                        <div class="swiper-slide slider-bg-position" style={{'background':'url('+'/images/2.jpg'+')'}} data-hash="slide2">
-                           
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-pagination"></div>
-                    
+        
+	<div> 	
+        <Slide {...properties}>
+            <div className="each-slide">
+                <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
                 </div>
-
-
-
-
-
+            </div>
+            <div className="each-slide">
+                <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+                </div>
+            </div>
+        </Slide>
 
 
     <section class="about-sec parallax-section py-lg-5 py-4" id="about">
@@ -35,10 +43,7 @@ const Home = () =>{
                     </div>
                     <div class="col-lg-4">
                         <p class = "about-us-font"> Our team of Ninja hopes to make having a pet easier and more manageable by providing services to complement the schedule of the different customer segments.</p>
-                        <div class="log-in mt-md-4 mt-3">
-                            <a class="btn text-uppercase" data-blast="bgColor" href="#">
-                             Read More</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

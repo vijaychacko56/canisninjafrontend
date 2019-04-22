@@ -1,0 +1,27 @@
+.slide-container {
+    max-width: 70%;
+    margin: auto;
+}
+  
+  .each-slide > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover !important;
+    position: relative;
+    height: 700px;
+    background-position: center center !important;
+  }
+
+  @media (max-width: 360px) {
+  .each-slide {
+      height: 80vh;
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
+    background-size: cover;
+  }
+}
+  
+
+  

@@ -6,7 +6,8 @@ class Login extends Component {
     super(props);
     this.state={
       loginEmail:'',
-      loginPassword:''
+      loginPassword:'',
+      flag: false,
     }
   }
 
@@ -32,7 +33,8 @@ class Login extends Component {
         this.props.onRouteChange('home');
       }
       else{
-        alert("Wrong credentials");
+        //alert("Wrong credentials");
+        this.setState({flag : true});
       }
     })
 }
@@ -40,9 +42,11 @@ class Login extends Component {
  render(){
 
   const { onRouteChange } = this.props;
+  
   return(
-
+    
     <div className="limiter">
+    
     <div className="container-login100">
     <div className="login100-more" style={{backgroundImage: "url(" +"/images/banner.jpg" + ")",marginLeft: '5%' , width: '550px' }} ></div>
                
@@ -51,7 +55,11 @@ class Login extends Component {
           <span className="login100-form-title p-b-34">
             Account Login
           </span>
-           
+          <div className="error" >
+              {this.state.flag == true && 
+                <p style={{color: 'red', textAlign: 'center'}}>Please check</p>
+              }
+          </div>
           <div className="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
             <input onChange={this.onEmailChange} id="email" className="input100" type="text" name="email" placeholder="Email"/>
             <span className="focus-input100"></span>
