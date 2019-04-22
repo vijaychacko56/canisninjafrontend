@@ -15,6 +15,7 @@ import Error from './Components/Error/Error';
 import Admin from './Components/Admin/Admin';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import Testimonial from './Components/Testimonial/Testimonial';
 
 class App extends Component {
   
@@ -91,12 +92,19 @@ this.setState({route:route});
                     
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login</strong></a> </li>
                             <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
                         </ul>
                     </div>
                 </div>
             </nav>
  
-{this.state.route === 'home'?<Home />:(this.state.route === 'login' ?<Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:(this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:(this.state.route=='admin'?<Admin />:<Error />))))}
+{this.state.route === 'home'?<Home />:
+(this.state.route === 'login' ?<Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : 
+  (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:
+    (this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:
+      (this.state.route=='admin'?<Admin />: 
+  (this.state.route=='testimonial'?<Testimonial />:<Error />
+    )))))}
 
   <Footer />
 
