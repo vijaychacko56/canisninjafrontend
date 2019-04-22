@@ -23,6 +23,16 @@ constructor(props) {
   Function that calls the endpoint to fetch
   all the users and their details from the database
 */
+
+componentDidMount() {
+  if(!this.props.userEmail){
+    alert("Login first")
+    this.props.onRouteChange('login');  
+  }
+}
+
+
+
 onGetUsers = ()=> {
 	fetch('https://obscure-lowlands-61077.herokuapp.com/users')
 	.then(users => users.json())
@@ -78,8 +88,8 @@ return(
   /**
    * HTML elements that are to be shown in the broswer and other devices
    */
-      <div style={{'marginTop': '120px', 'textAlign': 'center'}}>
-        <h3 style={{'marginTop': '150px'}}>Welcome, Admin!</h3>
+      <div style={{'marginTop': '100px', 'textAlign': 'center'}}>
+        <h3 style={{'marginTop': '100px'}}>Welcome, Admin!</h3>
         <div style={{'marginTop': '50px'}}>
           <p>Please select an operation you want to perform.</p>
         </div>
@@ -183,14 +193,14 @@ return(
                 
               </table>
             </div>
-            </div>
-            </div>
-            </div>
-        }
+          </div>
         </div>
+      </div>
+    }
+  </div>
 
-    </div>       
-    );
+  </div>       
+  );
 }
 
 
