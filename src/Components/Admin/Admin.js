@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 
-
+/*
+  Admin class that shows admin user details about
+  all the users and the services availed by the users.
+*/
 class  Admin extends Component {
 
-
+/* 
+  Contructor of class Admin
+  initializes class variables users and services to null
+*/
 constructor(props) {
     super(props);
     this.state={
@@ -13,23 +19,39 @@ constructor(props) {
     }
   }
 
+/* 
+  Function that calls the endpoint to fetch
+  all the users and their details from the database
+*/
 onGetUsers = ()=> {
 	fetch('https://obscure-lowlands-61077.herokuapp.com/users')
 	.then(users => users.json())
 	.then(users =>{	
-    this.setState({users: users});		
+    this.setState({users: users});		/*Initializes the class variable users with the fetched json data*/ 
   })
 }
+
+/* 
+  Function that calls the endpoint to fetch
+  all the services availed till date from the database
+*/
 onGetServices = ()=> {  
   fetch('https://obscure-lowlands-61077.herokuapp.com/getservices')
   .then(services => services.json())
   .then(services =>{ 
-    this.setState({services: services});  
+    this.setState({services: services});  /*Initializes the class variable services with the fetched json data*/
     console.log(services);  
   })
 }
 
+/*
+  reactjs fuction to reneder the HTML code
+*/
 render(){
+
+  /*
+    variable to style the users and services table
+  */
   var tableStyle = {
     "margin-left": "auto",
     "margin-right": "auto",
@@ -37,16 +59,25 @@ render(){
     "width": '800px'
  };
 
+  /*
+    variable to style the table header for both users and services table
+  */
  var headerStyle = {
   "padding": "10px",
   "text-align": "center"
  };
 
+ /*
+    variable to style the table rows for both users and services table
+  */
  var rowStyle = {
   "padding": "10px"
  };
 
 return(
+  /**
+   * HTML elements that are to be shown in the broswer and other devices
+   */
       <div style={{'marginTop': '120px', 'textAlign': 'center'}}>
         <h3 style={{'marginTop': '150px'}}>Welcome, Admin!</h3>
         <div style={{'marginTop': '50px'}}>
@@ -61,10 +92,19 @@ return(
          <br />
          <br />              
         <div>
+          {/**
+            condition to check if the class variable users is not empty
+            if the variable is not null, then the HTML code after the condition
+            is renedered in the browser.
+          */}
           {this.state.users != null &&      
       <div class="limiter">
     <div class="container-table100">
       <div class="wrap-table100">
+      {/**
+        User table starts
+        shows fields feteched from the database
+      */}
         <div class="table100">
           <table>
             <thead>
@@ -76,7 +116,10 @@ return(
                 <th class="column2">Member Since</th>
               </tr>
             </thead>
-            
+              {/**
+                class variable users key value pair
+                is iterated using the map
+              */}
               {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
@@ -103,10 +146,19 @@ return(
           </button>
         </div>   
         <div>
+          {/**
+            condition to check class variable services
+            is not null and if it is not null then HTML code below 
+            the condition to show the services table is shown
+          */}
 {this.state.services != null &&      
       <div class="limiter">
     <div class="container-table100">
       <div class="wrap-table100">
+      {/**
+        Services table with fields
+        fetched from the database
+      */}
         <div class="table100">
           <table>
             <thead>
@@ -116,6 +168,9 @@ return(
                 <th class="column2">Customer Name</th>
               </tr>
             </thead>
+            {/**
+              mapper to iterate the services variable
+            */}
                 {Object.keys(this.state.services).map((key) => (
               <tbody>
                 <tr>

@@ -422,6 +422,7 @@ h3.tittle span {
 }
 .booking-form select#country13 {
     font-weight: normal;
+    height: 40px;
     border: none;
     outline: none;
     color: #777;
