@@ -161,7 +161,7 @@ this.setState({route:route});
 (this.state.route === 'login' ?<Login email={this.state.user.email} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : 
   (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:
     (this.state.route === 'services'?<Services userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange}/>:
-      (this.state.route==='admin'?<Admin userEmail= {this.state.user.email} />:
+      (this.state.route==='admin'?<Admin userEmail= {this.state.user.email} onRouteChange ={this.onRouteChange} />:
         (this.state.route=='user'?<User userEmail= {this.state.user.email} fullname = {this.state.user.fullname} onRouteChange ={this.onRouteChange}/>:
         <Error />)))))}
 
