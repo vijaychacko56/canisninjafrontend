@@ -179,7 +179,7 @@ this.setState({route:route});
 </body>        
       </div>
     );
-  //}else statement
+  }
   }
 }
 
