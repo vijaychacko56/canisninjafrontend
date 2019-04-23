@@ -79,7 +79,7 @@ this.setState({route:route});
  const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
  const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed' : 'navbar-toggler navbar-toggler-right';
 
-    /*if(!(this.state.urls.includes(window.location.href)))
+    if(!(this.state.urls.includes(window.location.href)))
     {
           return (
               <div className="App">
@@ -125,7 +125,7 @@ this.setState({route:route});
 
             );
     }
-    else{*/
+    else{
 
     return (
       <div className="App">
@@ -142,18 +142,18 @@ this.setState({route:route});
                         <span className="navbar-toggler-icon"><i className="fa fa-bars" aria-hidden="true"></i></span>
                     </button>
             
-                    <a className="navbar-brand logo" href="#" onClick={()=> this.onRouteChange('home')}><img src ="/images/logo.jpg" alt="Logo" /></a> 
-                    <a className="navbar-brand mx-auto" href="#" onClick={()=> this.onRouteChange('home')}>Canis <span data-blast="color">Ninja</span></a>
+                    <a className="navbar-brand logo" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}><img src ="/images/logo.jpg" alt="Logo" /></a> 
+                    <a className="navbar-brand mx-auto" href="https://canisninja.herokuapp.com/#" onClick={()=> this.onRouteChange('home')}>Canis <span data-blast="color">Ninja</span></a>
                     <div  className={`${classOne}`}  id="navbarCollapse1">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
-                            <li className="nav-item"> <a className="nav-link"  href="#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" onClick={() => this.onRouteChange('home')} href="https://canisninja.herokuapp.com/#" data-blast="color"><strong>Home</strong> <span className="sr-only">(current)</span></a> </li>
+                            <li className="nav-item"> <a className="nav-link"  href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('services')}><strong>Services</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('testimonial')}><strong>Testimonial</strong></a> </li>
 
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('login')}><strong>Login/ Signup</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('user')}><strong>User</strong></a> </li>                            
 
-                            <li className="nav-item"> <a className="nav-link" href="#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
+                            <li className="nav-item"> <a className="nav-link" href="https://canisninja.herokuapp.com/#" onClick={() => this.onRouteChange('admin')}><strong>Admin</strong></a> </li>
                     
                         </ul>
                     </div>
