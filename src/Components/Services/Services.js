@@ -195,7 +195,7 @@ else{
                             Our dog handlers can spend some time with your pets and keep them energized. </p>
                             <p><b>Price: $25.00</b></p>
                         <div class="log-in mt-md-4 mt-3">
-                            <a style={{backgroundColor: 'white', padding: '0em 0em'}}href='#book'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
+                            <a data-target="#book" style={{backgroundColor: 'white', padding: '0em 0em'}}href='#'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
                              Book Now</button></a>
                         </div>
 
@@ -219,7 +219,7 @@ else{
                                 Our dog handlers will assist you in taking your pet to that important appointment. </p>
                                 <p><b>Price: $45.00</b></p>
                         <div class="log-in mt-md-4 mt-3">
-                        <a style={{backgroundColor: 'white', padding: '0em 0em'}}href='#book'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
+                        <a data-target="#book" style={{backgroundColor: 'white', padding: '0em 0em'}}href='#'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
                              Book Now</button></a>
                         </div>
 
@@ -244,7 +244,7 @@ else{
                                 They will be at your doorstep at scheduled time.</p>
                                 <p><b>Price: $15.00</b></p>
                         <div class="log-in mt-md-4 mt-3">
-                        <a style={{backgroundColor: 'white', padding: '0em 0em'}}href='#book'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
+                        <a data-target="#book" style={{backgroundColor: 'white', padding: '0em 0em'}}href='#'><button className="login100-form-btn" style={buttonStyle} data-blast="bgColor">
                              Book Now</button></a>
                         </div>
 
