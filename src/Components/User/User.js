@@ -76,7 +76,7 @@ return(
           <table>
             <thead>
               <tr class="table-head">
-                <th class="columnA">Name</th>
+                <th class="columnB">Name</th>
                 <th class="columnB">Service Name</th>
                 <th class="columnB">Date</th>
                 <th class="columnB">Address</th>
@@ -86,7 +86,7 @@ return(
               {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
-                  <td class="columnA">{this.state.users[key].cusname}</td>
+                  <td class="columnB">{this.state.users[key].cusname}</td>
                   <td class="columnB">{this.state.users[key].servname}</td>
                   <td class="columnB">{this.state.users[key].ondate}</td>
                   <td class="columnB">{this.state.users[key].address}</td>
