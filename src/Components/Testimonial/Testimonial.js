@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-
+/**
+ * Testimonial class that shows 
+ * the messages from different customers
+ */
 class Testimonial extends Component {
-    
+    /**
+     * function to display the html elements 
+     * in the browser
+     */
 render(){
 
      return(
@@ -12,10 +18,11 @@ render(){
     <div class = "bigslide">
         <div class="container">
             <div class="inner-sec-w3layouts py-md-5 py-3">
-                <h3 class="tittle text-center mb-lg-5 mb-3">
+                <h3 class="tittle text-center mb-lg-5 mb-3"> {/** heading for the testimonial page */}
                     <span data-blast="color">What</span> our Customers Say</h3>
-                       
+                       {/** row for customer 1 */}
                 <div class="row choose-main my-lg-4 my-3">
+                {/** container for user 1 */}
                     <div class="col-lg-6 galsses-grid-right mt-lg-4 hover14">
                         
                             <figure class="effect-lexitest">

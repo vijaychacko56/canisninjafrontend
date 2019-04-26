@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import '../../css/signup.css';
 
-
+/**
+ * Signup class that shows the signup form
+ * and handles data validation of the form fields
+ */
 class  Signup extends Component {
-
+    /** class constructor
+     * intiliazes class variables
+     */
    constructor(props) {
     super(props);
     this.state={
@@ -15,36 +20,54 @@ class  Signup extends Component {
       signupError:false
     }
   }
-
+ /**
+  * function called when email input field is changed
+  */
  onEmailChange = (event) => {
     this.setState({email: event.target.value})
  }
+  /**
+  * function called when password input field is changed
+  */
  onPasswordChange = (event) => {
     this.setState({password: event.target.value})
  }
+  /**
+  * function called when confirm password input field is changed
+  */
  onRepeatPasswordChange = (event) => {
     this.setState({repeatPassword: event.target.value})
  }
+  /**
+  * function called when username input field is changed
+  */
  onUsernameChange = (event) => {
     this.setState({username: event.target.value})
  }
+  /**
+  * function called when name input field is changed
+  */
   onNameChange = (event) => {
     this.setState({fullname: event.target.value})
  }
 
-
+/**
+ * function called when the sign up form is submitted
+ * handles the validation of entered input fields
+ * when successful subscries the user and saves details in the database
+ */
 onSubmitSignup = () => {
         const {email, password, username, fullname} = this.state;
         if(this.state.password != this.state.repeatPassword){
             this.setState({signupError: false})
-            alert("Passwords dont match");
+            alert("Passwords dont match"); /** error message */
 
         }
         else{
 
     if(email && password && username && fullname){
          this.setState({signupError: false})
-     fetch('https://obscure-lowlands-61077.herokuapp.com/register',{
+     fetch('https://obscure-lowlands-61077.herokuapp.com/register',{ /** end point to save the user details in the database */
       method: 'post',
       headers:{'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -74,6 +97,12 @@ onSubmitSignup = () => {
 
     
 }
+/**
+ * function to display the HTNL elements in the browser
+ * contains sign up form
+ * and background image
+ *
+ */
 
     render(){
         const {onRouteChange} = this.props;
@@ -85,18 +114,18 @@ onSubmitSignup = () => {
                 <div className="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
                         <div className="login100-form validate-form" style={{'padding-top': '90px'}}>
                             <span className="login100-form-title p-b-59">
-                                SIGN UP
+                                SIGN UP {/** title for the form */}
                             </span>
-
+                                {/** container for displaying the error messge */}
                                 <div style={{ 'display':this.state.signupError?'block':'none', 'background-color':'red', 'text-align':'center','padding':'1%', 'margin':'5% auto'}}>
                                      <p style={{'color':'white'}}> Woff!! Please enter all fields to Register!!</p>
                                 </div>
-
+                                { /** container for input field  name */}
                             <div className="wrap-input100 validate-input" data-validate="Name is required">
                                 <input onChange={this.onNameChange} className="input100" type="text" name="name" placeholder="Name..."/>
                                 <span className="focus-input100"></span>
                             </div>
-        
+                            {  /** container for input field  email */}
                             <div className="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                                 
                                 <input onChange={this.onEmailChange} className="input100" type="text" name="email" placeholder="Email addess..."/>

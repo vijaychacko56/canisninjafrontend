@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
-
+/**
+ * Services class
+ * contains information about services offered and
+ * the book now user form
+ */
 class Services extends Component {
-	
+/**
+ * 
+ * @param {*} props 
+ * construction initializes variables to hold entered 
+ * form input fields
+ */
 constructor(props) {
     super(props);
     this.state={
@@ -18,20 +27,35 @@ constructor(props) {
       success:false
     }
   }
-
+/**
+ * function called when name input field is changed
+ */
  onNameChange = (event) => {
     this.setState({cusname: event.target.value})
  }
+ /**
+ * function called when address input field is changed
+ */
  onAddressChange = (event) => {
     this.setState({address: event.target.value})
  }
+ /**
+ * function called when service name dropbox input field is changed
+ */
  onServiceChange = (event) => {
     this.setState({servname: event.target.value})
  }
+ /**
+ * function called when phone input field is changed
+ */
  onPhoneChange = (event) => {
     this.setState({phone: event.target.value})   
  }
-
+/**
+ * function called when the focus is out of the phone input field
+ * handles validation of phone number field using regex
+ * allows 10 digit numeric disits only
+ */
  onPhoneEnter = (event) => {
     var phonePattern = /^\d{10}$/;
     var checkMatch = (event.target.value).match(phonePattern);
@@ -40,39 +64,58 @@ constructor(props) {
         this.setState({phone: ''});
     }
  }
+ /**
+ * function called when zip input field is changed
+ */
  onZipChange = (event) => {
      this.setState({zip: event.target.value});
-     var zipPattern = /^\d{5}$/;
+ }
+ /**
+ * function called when the focus is out of the zip input field
+ * handles validation of zip number field using regex
+ * allows 5 digit numeric disits only
+ */
+ onZipEnter = (event) => {
+    var zipPattern = /^\d{5}$/;
      var zipMatch = (event.target.value).match(zipPattern);
      if(!zipMatch) {
-        alert("Woof! - Please check the zip, only 5 numeric digits are allowed!");
+        alert("Woof! - Please check the zip, only 5 numeric digits are allowed!"); /**error message displayed when zip number is wrong */
         this.setState({zip: ''});
      }
  }
+ /**
+ * function called when date input field is changed
+ */
  onDateChange = (event) => {
     this.setState({ondate: event.target.value})
  }
-
+/**
+ * function called when city input field is changed
+ */
  onCityChange = (event) => {
     this.setState({city: event.target.value})
 
  }
+ /**
+ * function called when state input field is changed
+ */
  onStateChange = (event) => {
     this.setState({state: event.target.value})
 
  }
- onZipChange = (event) => {
-    this.setState({zip: event.target.value})
-
- }
  
-
+/**
+ * function called when user hits the book now button
+ * handles form data validation
+ * displays error message
+ * saves the service details in the database
+ */
 onSubmitService = () =>{
     const {cusname, address, phone,city,state,zip,ondate, servname} = this.state;
     if(this.props.userEmail){
      if(cusname && address && phone && ondate && servname)   {
         this.setState({error: false});
-    fetch('https://obscure-lowlands-61077.herokuapp.com/saveservice',{
+    fetch('https://obscure-lowlands-61077.herokuapp.com/saveservice',{ /** end point */
       method: 'post',
       headers:{'Content-type': 'application/json'},
       body: JSON.stringify({
@@ -84,13 +127,13 @@ onSubmitService = () =>{
         servname: this.state.servname
       })
     }).then(response => response.json())
-    .then(res => {
+    .then(res => { /** validation for the service */
         if (res === 'servicesaved'){
             this.setState({success: true});
             
         }
         else{
-            alert('Service DID NOT save. Please try Again');    
+            alert('Service DID NOT save. Please try Again');    /** error meesage */
         }
     })
 }
@@ -106,7 +149,11 @@ else{
 }
 
 
-
+/**
+ * render function contains the HTML element
+ * to be shown in the browser
+ * and the style of button and input fields
+ */
     render(){
         var buttonStyle = {
             'width': '20%'
@@ -117,13 +164,14 @@ else{
         };
      return(
 <div>
+    {/** container for the services page */}
 <section className="about-sec parallax-section py-lg-5 py-4" id="services">
         <div className="container">
             <div className="inner-sec-w3layouts py-md-5 py-3"/>
              
         </div>
 </section>      
-
+{/** container to show information about services offered */}
    <section className="banner-bottom-wthree py-md-5 py-3" id="services">
         <div className="container">
             <div className="inner-sec-w3layouts py-md-5 py-3">

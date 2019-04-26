@@ -17,10 +17,17 @@ import Footer from './Components/Footer/Footer';
 import User from './Components/User/User';
 import Testimonial from './Components/Testimonial/Testimonial';
 
-
+/**
+ * main class that imports all the components from the Components folder
+ * imports all the css files
+ * handles the routing to different pages based on user input
+ */
 class App extends Component {
   
-
+/**
+ * class constructor
+ * initilizes the global variable email and fullname
+ */
   constructor(){
    super();
    this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -158,7 +165,10 @@ this.setState({route:route});
                 </div>
             </nav> 
     
-
+{/**
+  based on the local variable route
+  calls the component to be rendered to the browser
+*/}
 {this.state.route === 'home'?<Home />:
 (this.state.route === 'login' ?<Login email={this.state.user.email} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/> : 
   (this.state.route === 'signup' ? <Signup loadUser={this.loadUser} onRouteChange ={this.onRouteChange}/>:
@@ -171,6 +181,9 @@ this.setState({route:route});
   <br />
   <br />
   <br />
+  {/**
+    Calls the footer component at the end of page
+  */}
   <Footer />
 
   <script src="js/main.js"></script>

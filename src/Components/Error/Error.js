@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-
+/**
+ * Error function to handle the
+ * 404 message when a link that does not
+ * exits is accessed
+ */
 const Error = () =>{
 	return(
 <div style={{'width':'50%', 'margin':'0 auto','padding-top': '10%', 'text-align':'center' }}>
