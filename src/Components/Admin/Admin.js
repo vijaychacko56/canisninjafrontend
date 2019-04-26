@@ -92,7 +92,7 @@ return(
           <table>
             <thead>
               <tr class="table-head">
-                <th class="columnA">S No</th>
+                <th class="columnB">S No</th>
                 <th class="columnB">Name</th>
                 <th class="columnB">Email</th>
                 <th class="columnB">User Name</th>
@@ -108,7 +108,7 @@ return(
               {Object.keys(this.state.users).map((key) => (
               <tbody>
                 <tr>
-                  <td class="columnA">{this.state.users[key].id}</td>
+                  <td class="columnB">{this.state.users[key].id}</td>
                   <td class="columnB">{this.state.users[key].fullname}</td>
                   <td class="columnB">{this.state.users[key].email}</td>
                   <td class="columnB">{this.state.users[key].username}</td>
@@ -149,9 +149,11 @@ return(
           <table>
             <thead>
               <tr class="table-head">
-                <th class="columnA">S No</th>
+                <th class="columnB">S No</th>
                 <th class="columnB">Service Name</th>
                 <th class="columnB">Customer Name</th>
+                <th class="columnB">Phone</th>
+                <th class="columnB">Date</th>
               </tr>
             </thead>
 
@@ -161,9 +163,11 @@ return(
                 {Object.keys(this.state.services).map((key) => (
               <tbody>
                 <tr>
-                  <td class="columnA">{this.state.services[key].id}</td>
+                  <td class="columnB">{this.state.services[key].id}</td>
                   <td class="columnB">{this.state.services[key].servname}</td>
                   <td class="columnB">{this.state.services[key].cusname}</td>
+                  <td class="columnB">{this.state.services[key].phone}</td>
+                  <td class="columnB">{this.state.services[key].ondate}</td>
                 </tr>
                 </tbody> 
                 ))}

@@ -5,7 +5,6 @@ Top section
   width: 1300px; /*page container width */
   height: 1000px; /*page container heigth */
 }
-
 .top {
   text-align: center;
 }
@@ -14,18 +13,18 @@ Top section
  Margin for header
 */
 .marginTopH3{
-  margin-top: 10%;
+  margin-top: 10%; /* 130px / 1300px */
 }
 
 .divTop{
-   margin-top: 50px;
+   margin-top: 5%; /* 50px /1000 px */ 
 }
 
 /*
   Css for button click
 */
 .buttonClick{
-  width: 150px;
+  width: 11.5%; /* 150px/ 1300px */
   margin: auto;
 }
 
@@ -42,23 +41,19 @@ Top section
 */
 .container-t {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; 
   background: #c850c0;
   background:url('/images/paw.jpg');
 
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+  
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 33px 30px;
+  padding: 2.5% ; /* 33px / 1300px */
 }
 
 .wrap-t {
-  width: 1170px;
+  width: auto;
 }
 
 /*
@@ -68,7 +63,7 @@ table {
   border-spacing: 1;
   border-collapse: collapse;
   background: white;
-  border-radius: 10px;
+  border-radius: 1%; /*10px / 1000px  */
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
@@ -78,14 +73,14 @@ table * {
   position: relative;
 }
 table td, table th {
-  padding-left: 8px;
+  padding-left: 1%; /*10px / 1000px*/
 }
 table thead tr {
-  height: 60px;
+  height: 6%; /*60px/ 1000*/
   background: #167AC0;
 }
 table tbody tr {
-  height: 50px;
+  height: 5%; /*50px / 1000px */
 }
 
 /*
@@ -93,7 +88,7 @@ table tbody tr {
 */
 .table-head th{
   font-family: OpenSans-Regular;
-  font-size: 18px;
+  font-size: 1.125em; /*font of 18px */
   color: #fff;
   line-height: 1.2;
   font-weight: unset;
@@ -101,7 +96,7 @@ table tbody tr {
 
 tbody tr {
   font-family: OpenSans-Regular;
-  font-size: 15px;
+  font-size: 1.125em;
   color: #808080;
   line-height: 1.2;
   font-weight: unset;
@@ -115,20 +110,20 @@ tbody tr:hover {
 
 
 .columnA {
-  width: 260px;
-  padding-left: 40px;
+  width: 2%; /* 260px/ 1300px*/
+  padding-left: 3%; /*40px/ 1300px*/
 }
 
 .columnB {
-  width: 160px;
+  width: 12%;/* 160px / 1300px*/
 }
 
 .columnC {
-  width: 245px;
+  width: 19%;/* 245px / 1300px*/
 }
 
 .columnD {
-  width: 110px;
+  width: 8%;/* 110px / 1300px*/
   text-align: right;
 }
 
@@ -137,6 +132,7 @@ tbody tr:hover {
   .column3 {
     width: 100%;
   }
+
 
 
 @media screen and (max-width: 992px) {
@@ -195,6 +191,12 @@ tbody tr:hover {
   }
    .service table tbody tr td:nth-child(3):before {
     content: "Customer Name";
+  }
+   .service table tbody tr td:nth-child(4):before {
+    content: "Phone";
+  } 
+  .service table tbody tr td:nth-child(5):before {
+    content: "Date";
   }
 
   .localUser table tbody tr td:nth-child(1):before {
